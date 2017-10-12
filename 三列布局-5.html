@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三列布局-4 中区自适应- 全体左浮动 中区在html结构最上方</title>
+
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			width: 80%;
+			border: 10px solid red;
+			min-width: 600px;
+			height: 600px;
+			position: relative;
+		}
+		.left,.center,.right{
+			float: left;
+		}
+		/* 定宽列*/
+		.left{
+			width: 150px;
+			height: 600px;
+			background-color: blue;
+			position: absolute;
+			left: 0;
+		}
+		/*自适应列*/
+		.center{
+			width: 100%;
+			height: 600px;
+			background-color: coral;
+			padding: 0 150px;
+			box-sizing: border-box;
+
+		}
+		/*定宽列*/
+		.right{
+			width: 150px;
+			height: 600px;
+			background-color: yellow;
+			position: absolute;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="center">
+			
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+			
+		</div>
+		<div class="left">
+			left区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+		<div class="right">
+			right区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+
+				
+	</div>
+</body>
+</html>

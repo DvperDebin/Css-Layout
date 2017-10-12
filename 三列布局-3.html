@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三列布局-3 中区自适应- 左区左浮动，右区右浮动</title>
+	<!-- 注意不建议使用，因为移动中区到最后面不利用搜索引擎抓取关键字 -->
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			width: 80%;
+			border: 10px solid red;
+			min-width: 600px;
+			height: 600px;
+		}
+		/* 设置左区左浮动 */
+		.left{
+			width: 150px;
+			height: 600px;
+			background-color: blue;
+			float: left;
+		}
+		/* 中区自适应不浮动 但是还是被左右各覆盖150px 所以要左右各移动150px*/
+		.center{
+			height: 600px;
+			background-color: coral;
+			margin-left: 150px;
+			margin-right: 150px;
+		}
+		/* 设置右区右浮动 */
+		.right{
+			width: 150px;
+			height: 600px;
+			background-color: yellow;
+			float: right;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+			left区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+		<!-- 
+			这里就是利用浮动的一个兄弟级浮动属性，因为兄不浮动
+			那么弟浮动的区域永远不会超过兄，在这里，右区是弟div
+			中区是兄div，中区不浮动，那么右区浮动永远不会超过中区，
+			但是！ 左区浮动！所以我们可以让左区成为右区的兄div。那么
+			我们只要换一下中区和右区的位置就可以了 
+		-->
+		<div class="right">
+			right区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+		<div class="center">
+			
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+			
+		</div>
+				
+	</div>
+</body>
+</html>

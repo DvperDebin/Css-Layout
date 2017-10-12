@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三列布局-1 最右自适应</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			width: 80%;
+			border: 10px solid red;
+			min-width: 600px;
+		}
+		/* 中间两个定宽列设置浮动*/
+		.left, .center{
+			float: left;
+		}
+		.left{
+			width: 150px;
+			height: 600px;
+			background-color: blue;
+		}
+		.center{
+			width: 150px;
+			height: 600px;
+			background-color: coral;
+		}
+		/* 最后一个自适应列因为被左中两个div覆盖了300px所以要移动300px个位置*/
+		.right{
+			height: 600px;
+			background-color: yellow;
+			margin-left: 300px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left">left</div>
+		<div class="center">center</div>
+		<div class="right">right</div>		
+	</div>
+</body>
+</html>

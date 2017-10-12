@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三列布局-4 中区自适应- 左中右区都左浮动 中区在html结构最上方 利用容器的内边距</title>
+
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			width: 80%;
+			border: 10px solid red;
+			min-width: 600px;
+			height: 620px;
+			/* 
+				所有内容回到容器以后，我们发现依旧还有覆盖问题
+				换个思路，所有的区，其实都是内容区！ 所以我们可以使用：
+				容器的内边距来解决问题
+			*/
+			/* 这里左右都空出150px的空间，刚好是左右区域的宽度*/
+			padding: 0 150px;
+			/* 还是我们不想因为设置内边距而让容器向外扩散，所以设置怪异盒子模型*/
+			box-sizing: border-box;
+			
+		}
+		.left,.center,.right{
+			float: left;
+		}
+		/* 定宽列*/
+		.left{
+			width: 150px;
+			height: 600px;
+			background-color: blue;
+			/* 
+			因为都设置浮动，所以现在在同一层上，可以使用margin
+			移动的距离是父级宽度，就是中区宽度 所以是100%
+			*/
+			margin-left: -100%;
+			/* 
+			容器左右空出足够区域，现在我们把左区移过去，相对于自己原本位置的移动，我们选择相对定位
+			*/
+			position: relative;
+			/* 相对定位要注意是相对于自己进行定位 */
+			left: -150px;
+		}
+		/*自适应列*/
+		.center{
+			width: 100%;
+			height: 600px;
+			background-color: coral;
+		}
+		/*定宽列*/
+		.right{
+			width: 150px;
+			height: 600px;
+			background-color: yellow;
+			/* 左区回到容器后，右区也只需要移动自身宽度的距离即可*/
+			margin-left: -150px;
+			/* 
+			容器左右空出足够区域，现在我们把右区移过去，相对于自己原本位置的移动，我们选择相对定位
+			*/
+			position: relative;
+			/* 相对定位要注意是相对于自己进行定位 */
+			right: -150px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="center">
+			
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+			
+		</div>
+		<div class="left">
+			left区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+		<div class="right">
+			right区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+
+				
+	</div>
+</body>
+</html>

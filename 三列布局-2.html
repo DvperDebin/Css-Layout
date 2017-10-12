@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三列布局-2 中区自适应- 左中区左浮动，右区不浮动</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		.container{
+			width: 80%;
+			border: 10px solid red;
+			min-width: 600px;
+			/* 因为右区的绝对定位是相对于父级的，所以在这设置一个相对定位*/
+			position: relative;
+			height: 600px;
+		}
+		/* 左中浮动 */
+		.left, .center{
+			float: left;
+		}
+		.left{
+			width: 150px;
+			height: 600px;
+			background-color: blue;
+			/* 左区被覆盖，利用定位优先级高的属性重新显示*/
+			position: relative;
+		}
+		/* 中区自适应宽度*/
+		.center{
+			/* 浮动 - 宽度必须设置，自适应：100%*/
+			width: 100%;
+			height: 600px;
+			background-color: coral;
+			/* 容器空间不足被挤出，向左移动回到容器并覆盖左区*/
+			margin-left: -150px;
+			/*
+			 因为左区的定位优先级高，现在又被覆盖住了，所以要把内容区
+			 向右移动
+			 */
+			padding: 0 150px;
+			/* 因为设置padding之后我们不希望盒子向外撑，所以要设置怪异盒子模型
+			*/
+			box-sizing: border-box;
+		}
+		/* 
+		右区定宽，现在在最低一层，想要显示，依旧利用position优先级高的属性
+		*/
+		.right{
+			width: 150px;
+			height: 600px;
+			background-color: yellow;
+			/* 
+			设置一个绝对定位，但是我们需要它是相对于容器的一个绝对定位
+			所以要给容器一个相对定位，相对定位可以保证容器不脱离文档流
+			*/
+			position: absolute;
+			/* 让右区紧贴右侧 */
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="left">
+			left区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>
+		<div class="center">
+			
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+				center区域，我用来检测一下左右内边距和内容是否显示问题
+			
+		</div>
+		<div class="right">
+			right区域，我用来检测一下左右内边距和内容是否显示问题
+		</div>		
+	</div>
+</body>
+</html>
